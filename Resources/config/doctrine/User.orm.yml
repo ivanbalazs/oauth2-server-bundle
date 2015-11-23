@@ -16,6 +16,6 @@ OAuth2\ServerBundle\Entity\User:
             type:       simple_array
             nullable:   true
         scopes:
-            type:       simple_array
+            type:       array
             nullable:   true
     lifecycleCallbacks: {  }
