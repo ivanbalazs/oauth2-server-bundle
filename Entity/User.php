@@ -35,6 +35,11 @@ class User implements OAuth2UserInterface
     private $scopes;
 
     /**
+     * @var string
+     */
+    private $jwe;
+
+    /**
      * Set username
      *
      * @param  string $username
@@ -157,6 +162,29 @@ class User implements OAuth2UserInterface
     public function getScope()
     {
         return implode(' ', $this->getScopes());
+    }
+
+    /**
+     * Get JWE
+     *
+     * @return string
+     */
+    public function getJwe()
+    {
+        return $this->jwe;
+    }
+
+    /**
+     * Set JWE
+     *
+     * @param  string $jwe
+     * @return User
+     */
+    public function setJwe($jwe)
+    {
+        $this->jwe = $jwe;
+
+        return $this;
     }
 
     /**
