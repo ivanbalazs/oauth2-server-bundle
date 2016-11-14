@@ -40,6 +40,11 @@ class User implements OAuth2UserInterface
     private $jwe;
 
     /**
+     * @var string
+     */
+    private $idToken;
+
+    /**
      * Set username
      *
      * @param  string $username
@@ -183,6 +188,29 @@ class User implements OAuth2UserInterface
     public function setJwe($jwe)
     {
         $this->jwe = $jwe;
+
+        return $this;
+    }
+
+    /**
+     * Get ID Token
+     *
+     * @return string
+     */
+    public function getIdToken()
+    {
+        return $this->idToken;
+    }
+
+    /**
+     * Set ID Token
+     *
+     * @param  string $idToken
+     * @return User
+     */
+    public function setIdToken($idToken)
+    {
+        $this->idToken = $idToken;
 
         return $this;
     }

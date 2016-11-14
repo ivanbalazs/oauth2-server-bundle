@@ -21,4 +21,7 @@ OAuth2\ServerBundle\Entity\User:
         jwe:
             type:       text
             nullable:   true
+        idToken:
+            type:       text
+            nullable:   true
     lifecycleCallbacks: {  }
