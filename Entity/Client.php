@@ -2,10 +2,12 @@
 
 namespace OAuth2\ServerBundle\Entity;
 
+use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * Client
  */
-class Client
+class Client implements UserInterface
 {
     /**
      * @var string
@@ -172,5 +174,26 @@ class Client
     public function getPublicKey()
     {
         return $this->public_key;
+    }
+
+    public function eraseCredentials() {
+    }
+
+    public function getPassword() {
+        return $this->client_secret;
+    }
+
+    public function getRoles() {
+        return [
+            'USER_CLIENT_SECRET'
+        ];
+    }
+
+    public function getSalt() {
+        return;
+    }
+
+    public function getUsername() {
+        return $this->client_id;
     }
 }
